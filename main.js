@@ -17,9 +17,18 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     console.log(myLibrary[0]);
 }
-const newBook = new Book("Harry Potter Philosopher's Stone", "J.K Rowling", "223", false);
-myLibrary.push(newBook);
 
+function display() {
+
+}
+
+//placeholder info to make sure function display is working
+const placeholder1 = new Book("Harry Potter Philosopher's Stone", "J.K Rowling", "223", false);
+const placeholder2 = new Book("11/22/63", "Stephen King", "849", true);
+const placeholder3 = new Book("The Hobbit", "J.R.R Tolkien", "310", false);
+myLibrary.push(placeholder1, placeholder2, placeholder3);
+
+const display = document.querySelector(".grid-display");
 const submitButton = document.querySelector("#submitButton");
 submitButton.addEventListener('click', () => {
     addBookToLibrary();
