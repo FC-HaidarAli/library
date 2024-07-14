@@ -22,13 +22,13 @@ function display(bookNumber) {
     container = document.createElement("div");
     container.classList.add("grid-container");
     title = document.createElement("p");
-    title.textContent = `Title: ${myLibrary[bookNumber].title}`;
+    title.textContent = `Title: ${myLibrary[bookNumber].title.value}`;
     author = document.createElement("p");
-    author.textContent = `Author: ${myLibrary[bookNumber].author}`;
+    author.textContent = `Author: ${myLibrary[bookNumber].author.value}`;
     numberOfPages = document.createElement("p");
-    numberOfPages.textContent = `Number of Pages: ${myLibrary[bookNumber].numberOfPages}`;
+    numberOfPages.textContent = `Number of Pages: ${myLibrary[bookNumber].numberOfPages.value}`;
     readCheck = document.createElement("p");
-    readCheck.textContent = `Have you read it: ${myLibrary[bookNumber].haveRead}`;
+    readCheck.textContent = `Have you read it: ${myLibrary[bookNumber].haveRead.value}`;
 
     container.appendChild(title);
     container.appendChild(author);
