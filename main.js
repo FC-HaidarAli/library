@@ -15,11 +15,27 @@ function addBookToLibrary() {
     
     const newBook = new Book(title, author, numberOfPages, haveRead);
     myLibrary.push(newBook);
-    console.log(myLibrary[0]);
+    display(myLibrary.indexOf(newBook));
 }
 
-function display() {
+function display(bookNumber) {
+    container = document.createElement("div");
+    container.classList.add("grid-container");
+    title = document.createElement("p");
+    title.textContent = `Title: ${myLibrary[bookNumber].title}`;
+    author = document.createElement("p");
+    author.textContent = `Author: ${myLibrary[bookNumber].author}`;
+    numberOfPages = document.createElement("p");
+    numberOfPages.textContent = `Number of Pages: ${myLibrary[bookNumber].numberOfPages}`;
+    readCheck = document.createElement("p");
+    readCheck.textContent = `Have you read it: ${myLibrary[bookNumber].haveRead}`;
 
+    container.appendChild(title);
+    container.appendChild(author);
+    container.appendChild(numberOfPages);
+    container.appendChild(readCheck);
+
+    gridDisplay.appendChild(container);
 }
 
 //placeholder info to make sure function display is working
@@ -28,7 +44,8 @@ const placeholder2 = new Book("11/22/63", "Stephen King", "849", true);
 const placeholder3 = new Book("The Hobbit", "J.R.R Tolkien", "310", false);
 myLibrary.push(placeholder1, placeholder2, placeholder3);
 
-const display = document.querySelector(".grid-display");
+gridDisplay = document.querySelector(".grid-display");
+
 const submitButton = document.querySelector("#submitButton");
 submitButton.addEventListener('click', () => {
     addBookToLibrary();
