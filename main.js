@@ -39,7 +39,20 @@ function display(bookNumber) {
 }
 
 gridDisplay = document.querySelector(".grid-display");
+bookForm = document.querySelector("#bookForm");
+bookForm.style.display = "none";
+a = 0;
 
+const newBookButton = document.querySelector("#newBookButton");
+newBookButton.addEventListener('click', () => {
+    if (a == 0) {
+        bookForm.style.display = "block";
+        a = 1;
+    } else {
+        bookForm.style.display = "none";
+        a = 0;
+    }
+})
 const submitButton = document.querySelector("#submitButton");
 submitButton.addEventListener('click', () => {
     addBookToLibrary();
