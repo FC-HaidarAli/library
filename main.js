@@ -70,3 +70,5 @@ submitButton.addEventListener('click', () => {
     addBookToLibrary();
     console.log("check");
 })
+//NOTES
+//Left Off Here, No need to continue as the point of the project was to learn JavaScript, can code front-end later on though.
