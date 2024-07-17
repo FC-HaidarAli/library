@@ -21,6 +21,7 @@ function addBookToLibrary() {
 function display(bookNumber) {
     container = document.createElement("div");
     container.classList.add("grid-container");
+    container.id = bookNumber;
     title = document.createElement("p");
     title.textContent = `Title: ${myLibrary[bookNumber].title.value}`;
     author = document.createElement("p");
@@ -29,13 +30,23 @@ function display(bookNumber) {
     numberOfPages.textContent = `Number of Pages: ${myLibrary[bookNumber].numberOfPages.value}`;
     readCheck = document.createElement("p");
     readCheck.textContent = `Have you read it: ${myLibrary[bookNumber].haveRead.value}`;
+    removeButton = document.createElement("button");
+    removeButton.classList.add("removeButton");
+    removeButton.type = "button";
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener('click', () => {
+        displayCard = document.getElementById(bookNumber);
+        displayCard.style.display = "none";
+    })
 
     container.appendChild(title);
     container.appendChild(author);
     container.appendChild(numberOfPages);
     container.appendChild(readCheck);
+    container.appendChild(removeButton);
 
     gridDisplay.appendChild(container);
+
 }
 
 gridDisplay = document.querySelector(".grid-display");
@@ -53,6 +64,7 @@ newBookButton.addEventListener('click', () => {
         a = 0;
     }
 })
+
 const submitButton = document.querySelector("#submitButton");
 submitButton.addEventListener('click', () => {
     addBookToLibrary();
